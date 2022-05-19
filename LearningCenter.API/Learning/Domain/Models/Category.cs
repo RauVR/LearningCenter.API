@@ -10,4 +10,4 @@ namespace LearningCenter.API.Learning.Domain.Models
         //RelationShips 
         public IList<Tutorial> Tutorials { get; set; } = new List<Tutorial>();
     }
-}
+} 
