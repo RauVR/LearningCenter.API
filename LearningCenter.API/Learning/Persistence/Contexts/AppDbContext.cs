@@ -1,7 +1,30 @@
-﻿namespace LearningCenter.API.Learning.Persistence.Contexts
+﻿using Microsoft.EntityFrameworkCore;
+using LearningCenter.API.Learning.Domain.Models;
+using LearningCenter.API.Shared.Extensions;
+
+namespace LearningCenter.API.Learning.Persistence.Contexts
 {
-    public class AppDbContext
+    public class AppDbContext : DbContext
     {
-        
+        public AppDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
+        public DbSet<Category> Categories { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Category>().ToTable("Categories");
+            builder.Entity<Category>().HasKey(p => p.Id);
+            builder.Entity<Category>().Property(p => p.Id).IsRequired().ValueGeneratedOnAdd();
+            builder.Entity<Category>().Property(p => p.Name).IsRequired().HasMaxLength(30);
+            
+            //Apply Naming Convention
+            
+            builder.UseSnakeCaseNamingConvention();
+            
+
+        }
     }
 }
