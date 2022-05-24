@@ -10,7 +10,7 @@ namespace LearningCenter.API.Learning.Domain.Repositories
         Task AddAsync(Tutorial tutorial);
         Task<Tutorial> FindByIdAsync(int id);
         Task<Tutorial> FindByNameAsync(string name);
-        Task<IEnumerable<Tutorial>> FindByCategoryId(int categoryId);
+        Task<IEnumerable<Tutorial>> FindByCategoryIdAsync(int categoryId);
         void Update(Tutorial tutorial);
         void Remove(Tutorial tutorial);
     }

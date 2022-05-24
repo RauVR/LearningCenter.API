@@ -13,4 +13,20 @@
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Remove="Learning\Services\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Learning\Services\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Learning\Services\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Learning\Services\**" />
+    </ItemGroup>
+
 </Project>
