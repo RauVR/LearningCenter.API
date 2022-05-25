@@ -89,7 +89,7 @@ namespace LearningCenter.API.Learning.Services
 
         public Task<TutorialResponse> DeleteAsync(int id)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
